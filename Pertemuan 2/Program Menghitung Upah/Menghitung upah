@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+ float Jam_Kerja, Upah_Perjam, Total_Upah;
+
+printf("Masukan Jam_Kerja: ");
+scanf("%f", &Jam_Kerja);
+
+printf("Masukan Upah_Perjam: ");
+scanf("%f", &Upah_Perjam);
+
+Total_Upah = Jam_Kerja*Upah_Perjam*7;
+
+printf("Total Upah Selama 1 Minggu = %.2f\n", Total_Upah);
+
+
+    return 0;
+}
