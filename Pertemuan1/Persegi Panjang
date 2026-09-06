@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    float Panjang, Lebar, Luas, Keliling;
+    
+    printf("Masukan Nilai Panjang: ");
+    scanf("%f", &Panjang);
+    
+    printf("Masukan Nilai Lebar: ");
+    scanf("%f", &Lebar);
+    
+    Luas = Panjang*Lebar;
+    Keliling = 2*(Panjang+Lebar);
+    
+    printf("Luas Persegi Panjang = %.2f\n", Luas);
+    printf("Keliling Persegi Panjang = %.2f\n", Keliling);
+
+    return 0;
+}
