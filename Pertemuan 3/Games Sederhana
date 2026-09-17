@@ -29,7 +29,6 @@ int main() {
         int poin_soal = 5;
         
         if (soal_ke > 20) {
-            batas_operand = 3\60;
             batas_operand = 50;
             poin_soal = 15; 
         } else if (soal_ke > 10) {
