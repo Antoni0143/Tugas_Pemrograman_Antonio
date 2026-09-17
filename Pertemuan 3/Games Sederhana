@@ -20,6 +20,7 @@ int main() {
     printf("Pada 10 Soal Pertama Memberikan '+5' Point\n");
     printf("Pada 10 Soal Kedua Memberikan '+10' Point\n");
     printf("Pada 10 Soal Terakhir Memberikan '+20' Point\n");
+    printf("Pada 10 Soal Terakhir Memberikan '+15' Point\n");
     printf("\n");
     printf("--- Permainan Dimulai! ---\n\n");
 
@@ -29,6 +30,7 @@ int main() {
         
         if (soal_ke > 20) {
             batas_operand = 3\60;
+            batas_operand = 50;
             poin_soal = 15; 
         } else if (soal_ke > 10) {
             batas_operand = 30;
