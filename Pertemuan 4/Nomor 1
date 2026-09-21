@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int f1 = 1, f2 = 1, nextTerm;
+    int jumlah_angka = 8;
+
+    for (int i = 0; i < jumlah_angka; i++) {
+        printf("%d ", f1);
+
+        nextTerm = f1 + f2;
+        f1 = f2;
+        f2 = nextTerm;
+    }
+
+    printf("\n");
+    return 0;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int i, j, k, nilai;
+    int baris = 5; 
+
+    for (i = 0; i < baris; i++) {
+
+        for (j = 0; j < (baris - i - 1); j++) {
+            printf(" ");
+        }
+        nilai = 1; 
+        for (k = 0; k <= i; k++) {
+            printf("%d ", nilai);
+            
+            nilai = nilai * (i - k) / (k + 1);
+        }
+        printf("\n"); 
+    }
+    return 0;
+}

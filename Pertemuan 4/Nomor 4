@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+
+    int angka1[5] = {7, 15, 27, 42, 59};
+    int angka2[5] = {10, 18, 24, 28, 30};
+    
+    int i, j;
+    
+    for (i = 0; i < 5; i++) {
+
+        for (j = 5; j > i; j--) {
+            printf("*");
+        }
+        printf("%d %d\n", angka1[i], angka2[i]);
+    }
+    
+    return 0;
+}
