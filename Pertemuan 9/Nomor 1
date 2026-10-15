@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+float tambah (float a, float b)
+{
+    return a+b;
+}
+float kurang (float a, float b)
+{
+    return a-b;
+}
+float kali (float a, float b)
+{
+    return a*b;
+}
+float bagi (float a, float b)
+{
+    return a/b;
+}
+
+int main () {
+    float a,b,hasil;
+    char op, ulang;
+
+    do{
+        printf("--- KALKULATOR SEDERHANA ---\n");
+        printf("Masukan Angka Pertama: ");
+        scanf("%f", &a);
+        printf("Masukan Angka Kedua: ");
+        scanf("%f", &b);
+        printf("Pilih Operasi Perhitungan (+,-,x,/): ");
+        scanf(" %c", &op);
+
+        if (op == '+') {
+            hasil = tambah(a,b);
+            printf ("Hasil: %2f\n", hasil);
+        }
+        else if (op == '-') {
+            hasil = kurang (a,b);
+            printf ("Hasil: %2f\n", hasil);
+        }
+        else if (op == 'x' || op == 'X' || op == '*'){
+            hasil = kali (a,b);
+            printf ("Hasil: %2f\n", hasil);
+        }
+        else if (op == '/') {
+            if (b != 0) {
+            hasil = bagi (a,b);
+            printf ("Hasil: %2f\n", hasil);
+        }
+        else {
+            printf("Bilangan Tidak Bisa Dibagi Dengan 0.\n");
+    }
+    }
+    else {
+        printf ("Pilihan Tidak Valid");
+
+    }
+
+    printf("Hitung lagi? (y/n): ");
+    scanf(" %c", &ulang);
+    printf("\n");
+}
+    while (ulang == 'y' || ulang == 'Y');
+
+    printf ("Program Berakhir");
+
+return 0;
+}

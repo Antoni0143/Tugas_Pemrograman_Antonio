@@ -1,0 +1,85 @@
+
+#include <stdio.h>
+
+float a, b, hasil;
+
+void input_bilangan() {
+    printf("Masukkan bilangan pertama: ");
+    scanf("%f", &a);
+
+    printf("Masukkan bilangan kedua: ");
+    scanf("%f", &b);
+}
+
+void tambah() {
+    hasil = a + b;
+    printf("Hasil: %.2f\n", hasil);
+}
+
+void kurang() {
+    hasil = a - b;
+    printf("Hasil: %.2f\n", hasil);
+}
+
+void kali() {
+    hasil = a * b;
+    printf("Hasil: %.2f\n", hasil);
+}
+
+void bagi() {
+    if (b != 0)
+    {
+        hasil = a / b;
+        printf("Hasil: %.2f\n", hasil);
+    }
+    else
+    {
+        printf("Bilangan tidak bisa dibagi dengan 0.\n");
+    }
+}
+
+int main()
+{
+    char op, ulang;
+
+    do
+    {
+        printf("=== KALKULATOR SEDERHANA ===\n");
+
+        input_bilangan();
+
+        printf("Pilih operasi (+, -, x, /): ");
+        scanf(" %c", &op);
+
+        if (op == '+')
+        {
+            tambah();
+        }
+        else if (op == '-')
+        {
+            kurang();
+        }
+        else if (op == 'x' || op == 'X' || op == '*')
+        {
+            kali();
+        }
+        else if (op == '/')
+        {
+            bagi();
+        }
+        else
+        {
+            printf("Pilihan tidak valid.\n");
+        }
+
+        printf("\nHitung lagi? (y/n): ");
+        scanf(" %c", &ulang);
+
+        printf("\n");
+
+    } while (ulang == 'y' || ulang == 'Y');
+
+    printf("Program berakhir.\n");
+
+    return 0;
+}
