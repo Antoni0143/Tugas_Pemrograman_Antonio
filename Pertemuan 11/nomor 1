@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Menu {
+    char nama[50];
+    int harga;
+};
+
+struct Pegawai {
+    char nama[50];
+    int id;
+    char jabatan[30];
+};
+
+int main() {
+    struct Menu menu1;
+    struct Pegawai pegawai1;
+
+    printf("--- INPUT DATA MENU ---\n");
+
+    printf("Nama menu: ");
+    fgets(menu1.nama, sizeof(menu1.nama), stdin);
+    menu1.nama[strcspn(menu1.nama, "\n")] = '\0';
+
+    printf("Harga menu: ");
+    scanf("%d", &menu1.harga);
+    getchar();
+
+    printf("--- INPUT DATA PEGAWAI ---\n");
+
+    printf("Nama pegawai: ");
+    fgets(pegawai1.nama, sizeof(pegawai1.nama), stdin);
+    pegawai1.nama[strcspn(pegawai1.nama, "\n")] = '\0';
+
+    printf("ID pegawai: ");
+    scanf("%d", &pegawai1.id);
+    getchar();
+
+    printf("Jabatan: ");
+    fgets(pegawai1.jabatan, sizeof(pegawai1.jabatan), stdin);
+    pegawai1.jabatan[strcspn(pegawai1.jabatan, "\n")] = '\0';
+
+    printf("\n--- DATA MENU ---\n");
+    printf("Nama menu: %s\n", menu1.nama);
+    printf("Harga: Rp%d\n", menu1.harga);
+
+    printf("--- DATA PEGAWAI ---n");
+    printf("Nama: %s\n", pegawai1.nama);
+    printf("ID: %d\n", pegawai1.id);
+    printf("Jabatan: %s\n", pegawai1.jabatan);
+
+    return 0;
+}

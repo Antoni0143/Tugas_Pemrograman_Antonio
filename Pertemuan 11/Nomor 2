@@ -1,0 +1,128 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Menu {
+    char nama[30];
+    int harga;
+};
+
+struct Pegawai {
+    char nama[30];
+    int id;
+};
+
+int main() {
+    struct Menu makanan[5];
+    struct Menu minuman[3];
+    struct Pegawai pegawai[2];
+
+    int i, pilih, nomor, jenis;
+
+    for (i = 0; i < 5; i++) {
+        printf("Nama makanan ke-%d: ", i + 1);
+        scanf(" %29[^\n]", makanan[i].nama);
+
+        printf("Harga: ");
+        scanf("%d", &makanan[i].harga);
+    }
+
+    for (i = 0; i < 3; i++) {
+        printf("Nama minuman ke-%d: ", i + 1);
+        scanf(" %29[^\n]", minuman[i].nama);
+
+        printf("Harga: ");
+        scanf("%d", &minuman[i].harga);
+    }
+
+    for (i = 0; i < 2; i++) {
+        printf("Nama pegawai ke-%d: ", i + 1);
+        scanf(" %29[^\n]", pegawai[i].nama);
+
+        printf("ID pegawai: ");
+        scanf("%d", &pegawai[i].id);
+    }
+
+    do {
+        printf("\n=== APLIKASI RESTORAN ===\n");
+        printf("1. Tampilkan makanan\n");
+        printf("2. Tampilkan minuman\n");
+        printf("3. Tampilkan pegawai\n");
+        printf("4. Ubah menu\n");
+        printf("5. Ubah pegawai\n");
+        printf("0. Keluar\n");
+        printf("Pilih: ");
+        scanf("%d", &pilih);
+
+        if (pilih == 1) {
+            for (i = 0; i < 5; i++) {
+                printf("%d. %s - Rp%d\n",
+                       i + 1, makanan[i].nama, makanan[i].harga);
+            }
+        }
+
+        else if (pilih == 2) {
+            for (i = 0; i < 3; i++) {
+                printf("%d. %s - Rp%d\n",
+                       i + 1, minuman[i].nama, minuman[i].harga);
+            }
+        }
+
+        else if (pilih == 3) {
+            for (i = 0; i < 2; i++) {
+                printf("%d. %s - ID %d\n",
+                       i + 1, pegawai[i].nama, pegawai[i].id);
+            }
+        }
+
+        else if (pilih == 4) {
+            printf("1. Makanan, 2. Minuman: ");
+            scanf("%d", &jenis);
+
+            printf("Nomor data yang diubah: ");
+            scanf("%d", &nomor);
+
+            if (jenis == 1 && nomor >= 1 && nomor <= 5) {
+                printf("Nama baru: ");
+                scanf(" %29[^\n]", makanan[nomor - 1].nama);
+
+                printf("Harga baru: ");
+                scanf("%d", &makanan[nomor - 1].harga);
+            }
+            else if (jenis == 2 && nomor >= 1 && nomor <= 3) {
+                printf("Nama baru: ");
+                scanf(" %29[^\n]", minuman[nomor - 1].nama);
+
+                printf("Harga baru: ");
+                scanf("%d", &minuman[nomor - 1].harga);
+            }
+            else {
+                printf("Pilihan tidak valid!\n");
+            }
+        }
+
+        else if (pilih == 5) {
+            printf("Nomor pegawai yang diubah (1-2): ");
+            scanf("%d", &nomor);
+
+            if (nomor >= 1 && nomor <= 2) {
+                printf("Nama baru: ");
+                scanf(" %29[^\n]", pegawai[nomor - 1].nama);
+
+                printf("ID baru: ");
+                scanf("%d", &pegawai[nomor - 1].id);
+            }
+            else {
+                printf("Nomor tidak valid!\n");
+            }
+        }
+
+        else if (pilih != 0) {
+            printf("Pilihan tidak valid!\n");
+        }
+
+    } while (pilih != 0);
+
+    printf("Program selesai.\n");
+
+    return 0;
+}
